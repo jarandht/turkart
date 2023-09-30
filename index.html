@@ -1,0 +1,282 @@
+<html>
+<head>
+
+    <style>
+        :root{
+            --primeDark: #111;
+            --primeLight: #fff;
+            --primeGray: rgb(180, 180, 180);
+            --shadowColor: rgb(0, 0, 0, .8);
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: arial;
+        }
+        nav{
+            margin: 10px;
+        }
+        .logo{
+            height: 100px;
+        }
+        header{
+            margin: 20px 0;
+        }
+        main{
+            width: min(calc(100% - 20px), 1000px);
+            padding: 10px;
+            margin-inline: auto;
+        }
+        .search{
+            height: 45px;
+            display: grid;
+            align-items: center;
+            grid-template-columns: max-content 1fr;
+            width: 1fr;
+            border-radius: 30px;
+            background-color: var(--primeLight);
+            box-shadow: 0 0 2px var(--shadowColor);
+            padding: 8px 10px;
+            gap: 10px
+            ;
+        }
+        .search input{
+            color: var(--shadowColor);
+            background-color: var(--primeLight);
+            font-size: 20px;
+            height: max-content;
+            border: none;
+            height: 100%;
+        }
+        .search input::placeholder{
+            color: var(--shadowColor);
+        }
+        .search input:focus{
+            outline: none;
+        }
+        .search::before{
+            content: '';
+            display: block;
+            height: 20px;
+            width: 20px;
+            background-image: url(https://cdn-icons-png.flaticon.com/128/149/149852.png);
+            background-position: center;
+            background-size: cover;
+            filter: opacity(.5);
+        }
+        table, tbody{
+            width: 100%;
+
+            margin-top: 10px;
+        }
+        tbody{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: max-content;
+            gap: 15px;
+        }
+        @media screen and (max-width: 900px) {
+            tbody{
+            grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media screen and (max-width: 600px) {
+            tbody{
+            grid-template-columns: repeat(1, 1fr);
+            }
+            nav{
+                display: flex;
+                justify-content: center;
+        }
+        }
+        tr{
+            box-shadow: 0 0 2px var(--shadowColor);
+            border-radius: 10px;
+            display: grid;
+            grid-template-columns: 1fr max-content;
+            transition: .2s;
+        }
+        tr:hover{
+            cursor: pointer;
+            box-shadow: 0 0 3px var(--shadowColor);
+            scale: 1.01;
+        }
+        td{
+            margin: 20px;
+        }
+    
+    </style>
+
+<meta name="viewport" content="width=device-width, initial-scale=.80" />
+<title>Turkart-Kvam turlag</title>
+</head>
+<body>
+    <nav>
+        <img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_BxcKhCHIBC-kvhC3kzZzNHr1ctv8Ob3zXQ&usqp=CAU" alt="">
+    </nav>
+    <main>
+        <header>
+            <p> Her kan du s&oslash;ke opp turbeskrivelse for turane som er markert i kartet.</p>
+            <p><a href="https://kvam.dnt.no/turkart">Meir informasjon om turkartet for Kvam finn du her</a></p>
+        </header>
+            <div id="users">
+                <div class="search"><input placeholder="S&oslash;k" /></div>            
+
+
+        <!--        <button class="sort" data-sort="turxxx">
+          Sorter p&aring; namn
+        </button>
+        <button class="sort" data-sort="kode">
+            Sorter p&aring; kode
+        </button>
+    -->        
+
+        <table>
+            <!-- IMPORTANT, class="list" have to be at tbody -->
+            <tbody class="list">    
+                    <a href="https://ut.no/turforslag/1112088/kjepsoasen-kjepso"><tr><td class="tur">Kjepsoåsen-Kjepso</td><td class="kode">A1</td></tr></a>
+                    <a href="https://ut.no/turforslag/119621/krossfuru"><tr><td class="tur">Krossfuru</td><td class="kode">A2</td></tr></a>
+                    <a href="https://ut.no/turforslag/1111120/roaldsdalen"><tr><td class="tur">Roaldsdalen</td><td class="kode">A3</td></tr></a>
+                    <a href=""><tr><td class="tur">Lilletveitstølen</td><td class="kode">A4</td></tr></a>
+                    <a href="https://ut.no/rutebeskrivelse/135560/fra-alvik-til-rong-fjellstove"><tr><td class="tur">Rong</td><td class="kode">A5</td></tr></a>
+                    <a href="https://ut.no/turforslag/1111238/kjepsostlen"><tr><td class="tur">Kjepsostølen</td><td class="kode">A6</td></tr></a>
+                    <a href=""><tr><td class="tur">Oskarsborg</td><td class="kode">A7</td></tr></a>
+                    <a href="https://ut.no/turforslag/1112790/barlindflaten"><tr><td class="tur">Barlindflaten</td><td class="kode">A8</td></tr></a>
+                    <a href="https://ut.no/turforslag/116581/hedler"><tr><td class="tur">Hedler</td><td class="kode">B1</td></tr></a>
+                    <a href="https://ut.no/turforslag/1112810/vikedalsnebbet"><tr><td class="tur">Vikedalsnebbet</td><td class="kode">B2</td></tr></a>
+                    <a href="https://ut.no/turforslag/1112884/naglaklepp"><tr><td class="tur">Naglaklepp</td><td class="kode">B3</td></tr></a>
+                    <a href="https://ut.no/turforslag/119607/dammen"><tr><td class="tur">Dammen</td><td class="kode">B4</td></tr></a>
+                    <a href="https://ut.no/turforslag/1114037/giljafjell-praktfull-utsikt-mot-alvikfjella"><tr><td class="tur">Giljafjell</td><td class="kode">B5</td></tr></a>
+                    <a href="https://ut.no/turforslag/1112873/toppen"><tr><td class="tur">Toppen</td><td class="kode">B6</td></tr></a>
+                    <a href="https://ut.no/turforslag/119624"><tr><td class="tur">Bjølvesete</td><td class="kode">C1</td></tr></a>
+                    <a href="https://ut.no/tur/119607/kart#13.46/60.41868/6.37381"><tr><td class="tur">Dammen</td><td class="kode">C2</td></tr></a>
+                    <a href="https://ut.no/turforslag/1114039/sjusete-kort-stlstur-fra-bjrke"><tr><td class="tur">Sjusete</td><td class="kode">D1</td></tr></a>
+                    <a href="https://ut.no/turforslag/1115891"><tr><td class="tur">Syrdal</td><td class="kode">D2</td></tr></a>
+                    <a href="https://ut.no/turforslag/118273/fagraseteggi"><tr><td class="tur">Fagraseteggi</td><td class="kode">D3</td></tr></a>
+                    <a href=""><tr><td class="tur">Sjusete-Nyasete</td><td class="kode">D4</td></tr></a>
+                    <a href="https://ut.no/turforslag/1111121/nyasete"><tr><td class="tur">Nyasete</td><td class="kode">D5</td></tr></a>
+                    <a href="https://ut.no/turforslag/116428/topptur-til-bjrkeveten"><tr><td class="tur">Bjørkeveten</td><td class="kode">D6</td></tr></a>
+                    <a href="https://ut.no/turforslag/1111123/stavdal"><tr><td class="tur">Stavdal</td><td class="kode">D7</td></tr></a>
+                    <a href=""><tr><td class="tur">Brottefonn</td><td class="kode">D8</td></tr></a>
+                    <a href="https://ut.no/turforslag/118830201/storegreggen"><tr><td class="tur">Storegreggen</td><td class="kode">D9</td></tr></a>
+                    <a href="https://ut.no/turforslag/119626/klyvenuten"><tr><td class="tur">Klyvenuten</td><td class="kode">E1</td></tr></a>
+                    <a href="https://ut.no/turforslag/119635/skarsete"><tr><td class="tur">Skårsete</td><td class="kode">F1</td></tr></a>
+                    <a href="https://ut.no/turforslag/1111122/manfjell"><tr><td class="tur">Manfjell</td><td class="kode">F2</td></tr></a>
+                    <a href="https://ut.no/turforslag/1111219"><tr><td class="tur">Hyrting</td><td class="kode">F3</td></tr></a>
+                    <a href="https://ut.no/turforslag/118129416/kterberg"><tr><td class="tur">Økterberg</td><td class="kode">G1</td></tr></a>
+                    <a href="https://ut.no/turforslag/118129414/laupsadalen"><tr><td class="tur">Laupsadalen</td><td class="kode">H1</td></tr></a>
+                    <a href="https://ut.no/turforslag/118074654/titterastreet"><tr><td class="tur">Titteråstreet</td><td class="kode">H2</td></tr></a>
+                    <a href="https://ut.no/turforslag/1111342/hanadalen"><tr><td class="tur">Hanadalen</td><td class="kode">H3</td></tr></a>
+                    <a href="https://ut.no/turforslag/1111130/salvatnet"><tr><td class="tur">Salvatnet</td><td class="kode">H4</td></tr></a>
+                    <a href="https://ut.no/turforslag/1111325/sleggen"><tr><td class="tur">Sleggen</td><td class="kode">H5</td></tr></a>
+                    <a href="https://ut.no/turforslag/118074654/titterastreet"><tr><td class="tur">Titter&aring;street</td><td class="kode">I1</td></tr></a>
+                    <a href="https://ut.no/turforslag/118272/selesete"><tr><td class="tur">Selesete</td><td class="kode">I2</td></tr></a>
+                    <a href="https://ut.no/turforslag/114155/dgnope"><tr><td class="tur">D&oslash;gnope</td><td class="kode">I3</td></tr></a>
+                    <a href="https://ut.no/turforslag/1114087/klippe-stlstur-med-utsikt"><tr><td class="tur">Klippe</td><td class="kode">I4</td></tr></a>
+                    <a href="https://ut.no/turforslag/118774465/soldalsfjellet"><tr><td class="tur">Soldalsfjellet</td><td class="kode">I5</td></tr></a>
+                    <a href="https://ut.no/turforslag/1113992/sogestien-i-fitjadalen"><tr><td class="tur">Sogestien</td><td class="kode">I6</td></tr></a>
+                    <a href="https://ut.no/turforslag/1114150/eivindsete-pa-ei-hylle-mellom-hge-fjell"><tr><td class="tur">Ruedal-Eivindsete</td><td class="kode">I7</td></tr></a>
+                    <a href="https://ut.no/turforslag/1112822"><tr><td class="tur">Sm&oslash;rdalen</td><td class="kode">I8</td></tr></a>
+                    <a href="https://ut.no/turforslag/116438/skrott"><tr><td class="tur">Skrott</td><td class="kode">I9</td></tr></a>
+                    <a href="#"><tr><td class="tur">Skrott-Manfjell</td><td class="kode">I10</td></tr></a>
+                    <a href="https://ut.no/rutebeskrivelse/136498/fitjadalen-ystese-til-vending"><tr><td class="tur">Vending</td><td class="kode">I11</td></tr></a>
+                    <a href="https://ut.no/turforslag/117005/til-forunderlige-breidablik-fra-fitjadalen"><tr><td class="tur">Breidablik</td><td class="kode">I12</td></tr></a>
+                    <a href="https://ut.no/turforslag/1114337/kjetilsnuten"><tr><td class="tur">Kjetilsnuten</td><td class="kode">I13</td></tr></a>
+                    <a href="#"><tr><td class="tur">Torefjell</td><td class="kode">I14</td></tr></a>
+                    <a href="https://ut.no/turforslag/1112770/fagrasete"><tr><td class="tur">Fagrasete</td><td class="kode">J1</td></tr></a>
+                    <a href="https://ut.no/turforslag/116591/flyane-torefjell-krok"><tr><td class="tur">Flyane</td><td class="kode">J2</td></tr></a>
+                    <a href="https://ut.no/turforslag/1111211/krok"><tr><td class="tur">Krok</td><td class="kode">J3</td></tr></a>
+                    <a href="https://ut.no/turforslag/118196/torefjell"><tr><td class="tur">Torefjell</td><td class="kode">J4</td></tr></a>
+                    <a href="https://ut.no/turforslag/11993/jrstadvatn"><tr><td class="tur">Gr&oslash;nsete</td><td class="kode">J5</td></tr></a>
+                    <a href="#"><tr><td class="tur">Fugladalsviki</td><td class="kode">J6</td></tr></a>
+                    <a href="https://ut.no/turforslag/115528/norheimsdalen"><tr><td class="tur">Norheimsdalen</td><td class="kode">J7</td></tr></a>
+                    <a href="https://ut.no/turforslag/1111115/geitafjell"><tr><td class="tur">Geitafjell</td><td class="kode">J8</td></tr></a>
+                    <a href="https://ut.no/turforslag/1114163"><tr><td class="tur">Tj&oslash;rnafjell</td><td class="kode">J9</td></tr></a>
+                    <a href="https://ut.no/turforslag/118830242/vetla-havringsfjell"><tr><td class="tur">Vetla Havringsfjell</td><td class="kode">J10</td></tr></a>
+                    <a href="#"><tr><td class="tur">Klypet</td><td class="kode">K1</td></tr></a>
+                    <a href="https://ut.no/turforslag/116558/solhellanuten"><tr><td class="tur">Solhellanuten</td><td class="kode">K2</td></tr></a>
+                    <a href="https://ut.no/turforslag/1111226/sundvordalen"><tr><td class="tur">Sundvoredalen</td><td class="kode">K3</td></tr></a>
+                    <a href="#"><tr><td class="tur">Helgesteinen</td><td class="kode">K4</td></tr></a>
+                    <a href="https://ut.no/turforslag/1111221/svartaberg"><tr><td class="tur">Svartaberg</td><td class="kode">K5</td></tr></a>
+                    <a href="https://ut.no/turforslag/118135/kvam-turlag-kvam-i-kross-og-krakje-20-arsjubileum-skanavotno"><tr><td class="tur">Sk&aring;navotni</td><td class="kode">K6</td></tr></a>
+                    <a href="https://ut.no/turforslag/1111225/fagrafjell"><tr><td class="tur">Fagrafjell</td><td class="kode">K7</td></tr></a>
+                    <a href="https://ut.no/turforslag/1113971/fotasperrnuten-bratt-topptur-fra-steinskvanndalen"><tr><td class="tur">Fotasperrnuten</td><td class="kode">L1</td></tr></a>
+                    <a href="https://ut.no/turforslag/118830246/fuglafjell"><tr><td class="tur">Fuglafjell</td><td class="kode">L2</td></tr></a>
+                    <a href="https://ut.no/turforslag/119636/byrkjefjell"><tr><td class="tur">Byrkjefjell</td><td class="kode">M1</td></tr></a>
+                    <a href="https://ut.no/turforslag/118074678/iendefjell"><tr><td class="tur">Iendefjell</td><td class="kode">M2</td></tr></a>
+                    <a href="https://ut.no/turforslag/1112155587/skeisheii"><tr><td class="tur">Skeisheia</td><td class="kode">M3</td></tr></a>
+                    <a href="#"><tr><td class="tur">M&aring;votsheia</td><td class="kode">N1</td></tr></a>
+                    <a href="https://ut.no/turforslag/119644/tordalen"><tr><td class="tur">Tordalen</td><td class="kode">N2</td></tr></a>
+                    <a href="#"><tr><td class="tur">Fossdal</td><td class="kode">N3</td></tr></a>
+                    <a href="https://ut.no/turforslag/1112771/sata"><tr><td class="tur">S&aring;ta</td><td class="kode">O1</td></tr></a>
+                    <a href="https://ut.no/turforslag/1114161/kjel"><tr><td class="tur">Kjel</td><td class="kode">O2</td></tr></a>
+                    <a href="https://ut.no/turforslag/1112778/tveitakvitingen"><tr><td class="tur">Tveitakvitingen</td><td class="kode">O3</td></tr></a>
+                    <a href="https://ut.no/turforslag/1112826/fossdal"><tr><td class="tur">Fossdal</td><td class="kode">O4</td></tr></a>
+                    <a href="https://ut.no/turforslag/118848819/hganova"><tr><td class="tur">H&oslash;ganova</td><td class="kode">O5</td></tr></a>
+                    <a href="https://ut.no/turforslag/1112774/blomsete"><tr><td class="tur">Blomsete</td><td class="kode">P1</td></tr></a>
+                    <a href="https://ut.no/turforslag/1112917/mo-kjoshella-frosnotten-gullvotni-byrkjeland-mo"><tr><td class="tur">Gullvotno</td><td class="kode">P2</td></tr></a>
+                    <a href="https://ut.no/turforslag/1112917/mo-kjoshella-frosnotten-gullvotni-byrkjeland-mo"><tr><td class="tur">Frossnotten</td><td class="kode">P3</td></tr></a>
+                    <a href="https://ut.no/turforslag/1112767/kjoshella"><tr><td class="tur">Kjoshella</td><td class="kode">P4</td></tr></a>
+                    <a href="https://ut.no/turforslag/119631/steinbu"><tr><td class="tur">Steinbu</td><td class="kode">P4</td></tr></a>
+                    <a href="https://ut.no/turforslag/1112155787/kvilekroken"><tr><td class="tur">Kvilekroken</td><td class="kode">Q1</td></tr></a>
+                    <a href="#"><tr><td class="tur">Masta</td><td class="kode">Q2</td></tr></a>
+                    <a href="https://ut.no/turforslag/1112156333/slattenuten-fra-solhaug"><tr><td class="tur">Sl&aring;ttenuten</td><td class="kode">Q3</td></tr></a>
+                    <a href="https://ut.no/turforslag/1111257/nystl"><tr><td class="tur">Aksneshella</td><td class="kode">Q4</td></tr></a>
+                    <a href="https://ut.no/turforslag/1111257/nystl"><tr><td class="tur">Nyst&oslash;l</td><td class="kode">Q5</td></tr></a>
+                    <a href="#"><tr><td class="tur">Finnhiller</td><td class="kode">Q6</td></tr></a>
+                    <a href="https://ut.no/turforslag/116846"><tr><td class="tur">Gamlest&oslash;len</td><td class="kode">Q7</td></tr></a>
+                    <a href="https://ut.no/turforslag/118220/tjrnshaugtjrn"><tr><td class="tur">Tj&oslash;rnshaugtj&oslash;rn</td><td class="kode">R1</td></tr></a>
+                    <a href="https://ut.no/turforslag/118514493/aksnesasen"><tr><td class="tur">Aksnes&aring;sen</td><td class="kode">R2</td></tr></a>
+                    <a href="https://ut.no/turforslag/1111256/finnhiller"><tr><td class="tur">Finnheller</td><td class="kode">S1</td></tr></a>
+                    <a href="#"><tr><td class="tur">Heradstveitst&oslash;len</td><td class="kode">S2</td></tr></a>
+                    <a href="#"><tr><td class="tur">Vesoldo</td><td class="kode">S3</td></tr></a>
+                    <a href="#"><tr><td class="tur">T&oslash;rviknuten</td><td class="kode">S4</td></tr></a>
+                    <a href="https://ut.no/turforslag/1112155687/tveitstlen"><tr><td class="tur">Tveitst&oslash;len</td><td class="kode">S5</td></tr></a>
+                    <a href="https://ut.no/turforslag/119642/skarsete"><tr><td class="tur">Sk&aring;rsete</td><td class="kode">S6</td></tr></a>
+                    <a href="https://ut.no/turforslag/118147739/augastadasen"><tr><td class="tur">Augastad&aring;sen</td><td class="kode">S7</td></tr></a>
+                    <a href="https://ut.no/turforslag/116551/trviknuten"><tr><td class="tur">T&oslash;rviknuten</td><td class="kode">S8</td></tr></a>
+                    <a href="https://ut.no/turforslag/119615/ullhovda"><tr><td class="tur">Ullhovda</td><td class="kode">T1</td></tr></a>
+                    <a href="https://ut.no/turforslag/1111262/rundtur-rundt-svartavatnet"><tr><td class="tur">Svartavatnet</td><td class="kode">T2</td></tr></a>
+                    <a href="https://ut.no/turforslag/118274/olshiller"><tr><td class="tur">Olshiller</td><td class="kode">T3</td></tr></a>
+                    <a href="https://ut.no/turforslag/118038178/gjuva-stlstur"><tr><td class="tur">Gjuva</td><td class="kode">T4</td></tr></a>
+                    <a href="https://ut.no/turforslag/1111354/koldal"><tr><td class="tur">Koldal</td><td class="kode">U1</td></tr></a>
+                    <a href="https://ut.no/turforslag/1114262/linghiller"><tr><td class="tur">Lingheller</td><td class="kode">U2</td></tr></a>
+                    <a href="https://ut.no/turforslag/119618/vesoldo"><tr><td class="tur">Vesoldo</td><td class="kode">U3</td></tr></a>
+                    <a href="https://ut.no/turforslag/1112155699/bottsvatnet"><tr><td class="tur">Bottsvatnet</td><td class="kode">U4</td></tr></a>
+                    <a href="https://ut.no/turforslag/119649"><tr><td class="tur">Hauk&aring;sfjellet</td><td class="kode">U5</td></tr></a>
+                    <a href="https://ut.no/turforslag/1114160/lauvsete"><tr><td class="tur">Lauvsete</td><td class="kode">U6</td></tr></a>
+                    <a href="https://ut.no/turforslag/115780/dalsete"><tr><td class="tur">Dalsete</td><td class="kode">V1</td></tr></a>
+                    <a href="https://ut.no/turforslag/1112780/grnli-fra-strandadalen"><tr><td class="tur">Gr&oslash;nli</td><td class="kode">V2</td></tr></a>
+                    <a href="https://ut.no/turforslag/1114304/skar"><tr><td class="tur">Sk&aring;r</td><td class="kode">V3</td></tr></a>
+                    <a href="https://ut.no/turforslag/118213/kytingen"><tr><td class="tur">Kytingen</td><td class="kode">V4</td></tr></a>
+                    <a href="https://ut.no/turforslag/1111255/akssete"><tr><td class="tur">Akssete</td><td class="kode">W1</td></tr></a>
+                    <a href="https://ut.no/turforslag/1111253/krakenos"><tr><td class="tur">Kr&aring;kenos</td><td class="kode">W2</td></tr></a>
+                    <a href="https://ut.no/turforslag/1110762/nedre-bolstad-bru-i-strandbarm"><tr><td class="tur">Bolstad-Bru</td><td class="kode">W3</td></tr></a>
+                    <a href="https://ut.no/turforslag/118216/klepp"><tr><td class="tur">Klepp</td><td class="kode">W4</td></tr></a>
+                    <a href="https://ut.no/turforslag/1113126/storafjell"><tr><td class="tur">Storafjell</td><td class="kode">W5</td></tr></a>
+                    <a href="https://ut.no/turforslag/1112155660/raudkleiv"><tr><td class="tur">Raudkleiv</td><td class="kode">X1</td></tr></a>
+                    <a href="https://ut.no/turforslag/119651/rnotta"><tr><td class="tur">&oslash;rnotta</td><td class="kode">X2</td></tr></a>
+                    <a href="https://ut.no/turforslag/118215/daurmalsegga"><tr><td class="tur">Daurm&aring;lsegga</td><td class="kode">X3</td></tr></a>
+                    <a href="https://ut.no/turforslag/118074667/vikestlen"><tr><td class="tur">Vikest&oslash;len</td><td class="kode">X4</td></tr></a>
+                    <a href="https://ut.no/turforslag/118019865/vikevarden"><tr><td class="tur">Vikevarden</td><td class="kode">X5</td></tr></a>
+                    <a href="https://ut.no/turforslag/1110676/grovvatnet"><tr><td class="tur">Grovvatnet</td><td class="kode">X6</td></tr></a>
+                    <a href="https://ut.no/turforslag/119653/nessteinen"><tr><td class="tur">Nessteinen</td><td class="kode">Y1</td></tr></a>
+                    <a href="https://ut.no/turforslag/1112768/gravdalshorga"><tr><td class="tur">Gravdalshorga</td><td class="kode">Z1</td></tr></a>
+                    
+            </tbody>
+        </table>
+    </main>
+      </div>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+
+      <script>
+var options = {
+  valueNames: [ 'kode', 'tur' ]
+};
+
+var userList = new List('users', options);
+
+      </script>
+
+</body>
+</html>
